@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vessel Template</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2em; max-width: 800px; margin: auto; }
+        .editable { border: 1px dashed #ccc; padding: 0.5em; margin-bottom: 1em; }
+        button { padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1 contenteditable="true" class="editable">[Название судна]</h1>
+    <p contenteditable="true" class="editable">[Описание судна]</p>
+    <p><strong>Длина:</strong> <span contenteditable="true" class="editable">[введите длину]</span> м</p>
+    <p><strong>Ширина:</strong> <span contenteditable="true" class="editable">[введите ширину]</span> м</p>
+    <p><strong>Скорость:</strong> <span contenteditable="true" class="editable">[введите скорость]</span> узлов</p>
+
+    <button onclick="submitForm()">Submit</button>
+
+    <script>
+        function submitForm() {
+            const fields = document.querySelectorAll('.editable');
+            let data = [];
+            fields.forEach((el, i) => data.push(el.innerText.trim()));
+
+            const mailto = "mailto:your@email.com?subject=Vessel Submission&body=" + encodeURIComponent(data.join("\n"));
+            window.location.href = mailto;
+        }
+    </script>
+</body>
+</html>
