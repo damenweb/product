@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const storiesTableBody = document.querySelector('#storiesTable tbody');
     const loadingIndicator = document.getElementById('loadingIndicator');
 
-    const API_TOKEN = 'nfzsk674L69yR4cKix3jlAtt-136235-HvdLBQzcBi3NszE4uYdm';
+    const API_TOKEN = '';
     const BASE_URL = 'https://mapi.storyblok.com/v1/spaces/103684/stories/';
     let allStories = []; // To store all fetched stories
 
